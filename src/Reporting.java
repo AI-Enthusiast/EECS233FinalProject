@@ -313,21 +313,18 @@ public class Reporting {
         is.graph(ISmeanRev, yCords, Color.RED);
         is.graph(ISmeanRand, yCords, Color.YELLOW);
         is.display("Insertion Sort");
-
         /* bubble */
         Grapher bs = new Grapher();
         bs.graph(BSmeanSort, yCords, Color.BLUE);
         bs.graph(BSmeanRev, yCords, Color.RED);
         bs.graph(BSmeanRand, yCords, Color.yellow);
         bs.display("Bubble Sort");
-
         /* quick */
         Grapher qs = new Grapher();
         qs.graph(QSmeanSort, yCords, Color.BLUE);
         qs.graph(QSmeanRev, yCords, Color.RED);
         qs.graph(QSmeanRand, yCords, Color.yellow);
         qs.display("Quick Sort");
-
         /* merge */
         Grapher ms = new Grapher();
         ms.graph(MSmeanSort, yCords, Color.BLUE);
