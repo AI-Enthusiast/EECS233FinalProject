@@ -182,25 +182,27 @@ public class Reporting {
         int[] arr100 = generateArray(true, false, 100000);
         int[] arr1000 = generateArray(true, false, 1000000);
 
-        /* first round of double checking  an already sorted array */
-        long sortHS1 = 0;
-        long sortHS10 = 0;
-        long sortHS100 = 0;
-        long sortHS1000 = 0;
-        long sortQS1 = 0;
+        /* used to compute the average run time */
+        long sortIS1 = 0; //Insertion Sort
+        long sortIS10 = 0;
+        long sortIS100 = 0;
+        long sortIS1000 = 0;
+
+        long sortQS1 = 0; //Quick Sort
         long sortQS10 = 0;
         long sortQS100 = 0;
         long sortQS1000 = 0;
-        long sortMS1 = 0;
+
+        long sortMS1 = 0;//Merge Sort
         long sortMS10 = 0;
         long sortMS100 = 0;
         long sortMS1000 = 0;
 
-        /* array of run times */
-        long[] arrHS1 = new long[3];
-        long[] arrHS10 = new long[3];
-        long[] arrHS100 = new long[3];
-        long[] arrHS1000 = new long[3];
+        /* arrays to be used for run times */
+        long[] arrIS1 = new long[3];
+        long[] arrIS10 = new long[3];
+        long[] arrIS100 = new long[3];
+        long[] arrIS1000 = new long[3];
 
         long[] arrQS1 = new long[3];
         long[] arrQS10 = new long[3];
@@ -213,34 +215,19 @@ public class Reporting {
         long[] arrMS1000 = new long[3];
 
 
-        /* test are organized as such : */
-        /* --- Sorted ---
-         *      heapsort
-         *          1000
-         *          10000
-         *          100000
-         *          1000000
-         *      quicksort
-         *      mergesort
-         * --- Reversed ---
-         * --- Random ---
-         */
-
+        /* three rounds of sorting an already sorted array */
         contents = contents + "------ SORTED ------";
         /* three rounds of checking an already sorted array */
         for (int count = 1; count < 4; count++) {
             /* insert sort */
-            Sorting.insertionSort(arr1);
-            arrHS1[count - 1] = Sorting.getTime();
-            Sorting.insertionSort(arr10);
-            arrHS10[count - 1] = Sorting.getTime();
-            sortHS10 = sortHS10 + Sorting.getTime();
-            Sorting.insertionSort(arr100);
-            arrHS100[count - 1] = Sorting.getTime();
-            sortHS100 = sortHS100 + Sorting.getTime();
-            Sorting.insertionSort(arr1000);
-            arrHS1000[count - 1] = Sorting.getTime();
-            sortHS1000 = sortHS1000 + Sorting.getTime();
+            arrIS1[count - 1] = testInsertionSort(arr1);
+            sortIS1 = sortIS1 + Sorting.getTime();
+            arrIS10[count - 1] = testInsertionSort(arr10);
+            sortIS10 = sortIS10 + Sorting.getTime();
+            arrIS100[count - 1] = testInsertionSort(arr100);
+            sortIS100 = sortIS100 + Sorting.getTime();
+            arrIS1000[count - 1] = testInsertionSort(arr1000);
+            sortIS1000 = sortIS1000 + Sorting.getTime();
 
             /* quick sort */
             Sorting.quickSort(arr1);
@@ -270,10 +257,10 @@ public class Reporting {
             sortMS1000 = sortMS1000 + Sorting.getTime();
         }
         contents = contents + "\n\n   --- Variance Sorted ---";
-        contents = contents + "\n      Variance HS1: " + varianceVal(arrHS1);
-        contents = contents + "\n      Variance HS10: " + varianceVal(arrHS10);
-        contents = contents + "\n      Variance HS100: " + varianceVal(arrHS100);
-        contents = contents + "\n      Variance HS1000: " + varianceVal(arrHS1000);
+        contents = contents + "\n      Variance HS1: " + varianceVal(arrIS1);
+        contents = contents + "\n      Variance HS10: " + varianceVal(arrIS10);
+        contents = contents + "\n      Variance HS100: " + varianceVal(arrIS100);
+        contents = contents + "\n      Variance HS1000: " + varianceVal(arrIS1000);
         contents = contents + "\n      Variance QS1: " + varianceVal(arrQS1);
         contents = contents + "\n      Variance QS10: " + varianceVal(arrQS10);
         contents = contents + "\n      Variance QS100: " + varianceVal(arrQS100);
@@ -283,10 +270,10 @@ public class Reporting {
         contents = contents + "\n      Variance MS100: " + varianceVal(arrMS100);
         contents = contents + "\n      Variance MS1000: " + varianceVal(arrMS1000);
         contents = contents + "\n\n   --- Averages Sorted ---";
-        contents = contents + "\n      HeapSort1 average time(μs):" + sortHS1 / 3;
-        contents = contents + "\n      HeapSort10 average time(μs):" + sortHS10 / 3;
-        contents = contents + "\n      HeapSort100 average time(μs):" + sortHS100 / 3;
-        contents = contents + "\n      HeapSort1000 average time(μs):" + sortHS1000 / 3;
+        contents = contents + "\n      HeapSort1 average time(μs):" + sortIS1 / 3;
+        contents = contents + "\n      HeapSort10 average time(μs):" + sortIS10 / 3;
+        contents = contents + "\n      HeapSort100 average time(μs):" + sortIS100 / 3;
+        contents = contents + "\n      HeapSort1000 average time(μs):" + sortIS1000 / 3;
         contents = contents + "\n      QuickSort1 average time(μs):" + sortQS1 / 3;
         contents = contents + "\n      QuickSort10 average time(μs):" + sortQS10 / 3;
         contents = contents + "\n      QuickSort100 average time(μs):" + sortQS100 / 3;
@@ -296,25 +283,26 @@ public class Reporting {
         contents = contents + "\n      MergeSort100 average time(μs):" + sortMS100 / 3;
         contents = contents + "\n      MergeSort1000 average time(μs):" + sortMS1000 / 3;
 
-        contents = contents + "\n\n\n\n------ REVERSED ------";
+
         /* three rounds of checking a reversed sorted array */
+        contents = contents + "\n\n\n\n------ REVERSED ------";
         for (int count = 1; count < 4; count++) {
             /* heap sort */
             reverse(arr1);
             Sorting.insertionSort(arr1);
-            arrHS1[count - 1] = Sorting.getTime();
+            arrIS1[count - 1] = Sorting.getTime();
             reverse(arr10);
             Sorting.insertionSort(arr10);
-            arrHS10[count - 1] = Sorting.getTime();
-            sortHS10 = sortHS10 + Sorting.getTime();
+            arrIS10[count - 1] = Sorting.getTime();
+            sortIS10 = sortIS10 + Sorting.getTime();
             reverse(arr100);
             Sorting.insertionSort(arr100);
-            arrHS100[count - 1] = Sorting.getTime();
-            sortHS100 = sortHS100 + Sorting.getTime();
+            arrIS100[count - 1] = Sorting.getTime();
+            sortIS100 = sortIS100 + Sorting.getTime();
             reverse(arr1000);
             Sorting.insertionSort(arr1000);
-            arrHS1000[count - 1] = Sorting.getTime();
-            sortHS1000 = sortHS1000 + Sorting.getTime();
+            arrIS1000[count - 1] = Sorting.getTime();
+            sortIS1000 = sortIS1000 + Sorting.getTime();
             /* quick sort */
             reverse(arr1);
             Sorting.quickSort(arr1);
@@ -351,10 +339,10 @@ public class Reporting {
             sortMS1000 = sortMS1000 + Sorting.getTime();
         }
         contents = contents + "\n\n   --- Variance Reversed ---";
-        contents = contents + "\n      Variance HS1: " + varianceVal(arrHS1);
-        contents = contents + "\n      Variance HS10: " + varianceVal(arrHS10);
-        contents = contents + "\n      Variance HS100: " + varianceVal(arrHS100);
-        contents = contents + "\n      Variance HS1000: " + varianceVal(arrHS1000);
+        contents = contents + "\n      Variance HS1: " + varianceVal(arrIS1);
+        contents = contents + "\n      Variance HS10: " + varianceVal(arrIS10);
+        contents = contents + "\n      Variance HS100: " + varianceVal(arrIS100);
+        contents = contents + "\n      Variance HS1000: " + varianceVal(arrIS1000);
         contents = contents + "\n      Variance QS1: " + varianceVal(arrQS1);
         contents = contents + "\n      Variance QS10: " + varianceVal(arrQS10);
         contents = contents + "\n      Variance QS100: " + varianceVal(arrQS100);
@@ -364,10 +352,10 @@ public class Reporting {
         contents = contents + "\n      Variance MS100: " + varianceVal(arrMS100);
         contents = contents + "\n      Variance MS1000: " + varianceVal(arrMS1000);
         contents = contents + "\n\n   --- Averages Reversed ---";
-        contents = contents + "\n      HeapSort1 average time(μs):" + sortHS1 / 3;
-        contents = contents + "\n      HeapSort10 average time(μs):" + sortHS10 / 3;
-        contents = contents + "\n      HeapSort100 average time(μs):" + sortHS100 / 3;
-        contents = contents + "\n      HeapSort1000 average time(μs):" + sortHS1000 / 3;
+        contents = contents + "\n      HeapSort1 average time(μs):" + sortIS1 / 3;
+        contents = contents + "\n      HeapSort10 average time(μs):" + sortIS10 / 3;
+        contents = contents + "\n      HeapSort100 average time(μs):" + sortIS100 / 3;
+        contents = contents + "\n      HeapSort1000 average time(μs):" + sortIS1000 / 3;
         contents = contents + "\n      QuickSort1 average time(μs):" + sortQS1 / 3;
         contents = contents + "\n      QuickSort10 average time(μs):" + sortQS10 / 3;
         contents = contents + "\n      QuickSort100 average time(μs):" + sortQS100 / 3;
@@ -377,25 +365,26 @@ public class Reporting {
         contents = contents + "\n      MergeSort100 average time(μs):" + sortMS100 / 3;
         contents = contents + "\n      MergeSort1000 average time(μs):" + sortMS1000 / 3;
 
+
+        /* three rounds of checking a randomly sorted array */
         contents = contents + "\n\n\n\n------ RANDOM ------";
-        /* three rounds of checking a random array */
         for (int count = 1; count < 4; count++) {
                /* heap sort */
             shuffle(arr1);
             Sorting.insertionSort(arr1);
-            arrHS1[count - 1] = Sorting.getTime();
+            arrIS1[count - 1] = Sorting.getTime();
             shuffle(arr10);
             Sorting.insertionSort(arr10);
-            arrHS10[count - 1] = Sorting.getTime();
-            sortHS10 = sortHS10 + Sorting.getTime();
+            arrIS10[count - 1] = Sorting.getTime();
+            sortIS10 = sortIS10 + Sorting.getTime();
             shuffle(arr100);
             Sorting.insertionSort(arr100);
-            arrHS100[count - 1] = Sorting.getTime();
-            sortHS100 = sortHS100 + Sorting.getTime();
+            arrIS100[count - 1] = Sorting.getTime();
+            sortIS100 = sortIS100 + Sorting.getTime();
             shuffle(arr1000);
             Sorting.insertionSort(arr1000);
-            arrHS1000[count - 1] = Sorting.getTime();
-            sortHS1000 = sortHS1000 + Sorting.getTime();
+            arrIS1000[count - 1] = Sorting.getTime();
+            sortIS1000 = sortIS1000 + Sorting.getTime();
             /* quick sort */
             shuffle(arr1);
             Sorting.quickSort(arr1);
@@ -432,10 +421,10 @@ public class Reporting {
             sortMS1000 = sortMS1000 + Sorting.getTime();
         }
         contents = contents + "\n\n   --- Variance Random ---";
-        contents = contents + "\n      Variance HS1: " + varianceVal(arrHS1);
-        contents = contents + "\n      Variance HS10: " + varianceVal(arrHS10);
-        contents = contents + "\n      Variance HS100: " + varianceVal(arrHS100);
-        contents = contents + "\n      Variance HS1000: " + varianceVal(arrHS1000);
+        contents = contents + "\n      Variance HS1: " + varianceVal(arrIS1);
+        contents = contents + "\n      Variance HS10: " + varianceVal(arrIS10);
+        contents = contents + "\n      Variance HS100: " + varianceVal(arrIS100);
+        contents = contents + "\n      Variance HS1000: " + varianceVal(arrIS1000);
         contents = contents + "\n      Variance QS1: " + varianceVal(arrQS1);
         contents = contents + "\n      Variance QS10: " + varianceVal(arrQS10);
         contents = contents + "\n      Variance QS100: " + varianceVal(arrQS100);
@@ -445,10 +434,10 @@ public class Reporting {
         contents = contents + "\n      Variance MS100: " + varianceVal(arrMS100);
         contents = contents + "\n      Variance MS1000: " + varianceVal(arrMS1000);
         contents = contents + "\n\n   --- Averages Random ---";
-        contents = contents + "\n      HeapSort1 average time(μs):" + sortHS1 / 3;
-        contents = contents + "\n      HeapSort10 average time(μs):" + sortHS10 / 3;
-        contents = contents + "\n      HeapSort100 average time(μs):" + sortHS100 / 3;
-        contents = contents + "\n      HeapSort1000 average time(μs):" + sortHS1000 / 3;
+        contents = contents + "\n      HeapSort1 average time(μs):" + sortIS1 / 3;
+        contents = contents + "\n      HeapSort10 average time(μs):" + sortIS10 / 3;
+        contents = contents + "\n      HeapSort100 average time(μs):" + sortIS100 / 3;
+        contents = contents + "\n      HeapSort1000 average time(μs):" + sortIS1000 / 3;
         contents = contents + "\n      QuickSort1 average time(μs):" + sortQS1 / 3;
         contents = contents + "\n      QuickSort10 average time(μs):" + sortQS10 / 3;
         contents = contents + "\n      QuickSort100 average time(μs):" + sortQS100 / 3;

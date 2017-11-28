@@ -1,13 +1,14 @@
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Created to ensure the sorting algorithms work correctly
+ *
  * @author1 Cormac Dacker cxd289
  * @author2 Nicole Coury nfc16
  */
 public class SortTester {
-
     /**
      * Test to insure Insertion sort works correctly before timing it
      */

@@ -1,5 +1,5 @@
 /**
- * Sorting class to for HeapSort, QuickSort, and MergeSort
+ * Sorting class to for InsertionSort, BubbleSort, QuickSort, and MergeSort
  *
  * @author1 Cormac Dacker cxd289
  * @author2 Nicole Coury nfc16
@@ -129,20 +129,6 @@ class Sorting {
         /* the start of the right branch should not include the pivot */
         left++;
         if (end - left > 0) quickSort(arr, left, end);
-    }
-
-    /**
-     * Method switches two int at the locations given in the array
-     * A helper method to heapSort
-     *
-     * @param arr the array the switch will preform in
-     * @param a   being switched with b
-     * @param b   being switched with a
-     */
-    private static void switcher(int[] arr, int a, int b) {
-        int c = arr[a];
-        arr[a] = arr[b];
-        arr[b] = c;
     }
 
     /**
