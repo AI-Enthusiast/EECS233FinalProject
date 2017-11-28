@@ -21,7 +21,7 @@ public class Reporting {
         if (sorted || reverse) {
             /* if it's reveresed */
             if (reverse) {
-                for (int index = size - 1; index < 0; index--) {
+                for (int index = size - 1; index > 0; index--) {
                     arr[index] = index + 1;
                 }
                 /* else it's sorted (increasing order) */
@@ -106,22 +106,22 @@ public class Reporting {
         return avgTime / arrayOfSamples.length;
     }
 
-    static long insertionSort(int[] arr) {
+    private static long insertionSort(int[] arr) {
         Sorting.insertionSort(arr);
         return Sorting.getTime();
     }
 
-    public static long bubbleSort(int[] arr){
+    private static long bubbleSort(int[] arr){
         Sorting.bubbleSort(arr);
         return Sorting.getTime();
     }
 
-    static long quickSort(int[] arr) {
+    private static long quickSort(int[] arr) {
         Sorting.quickSort(arr);
         return Sorting.getTime();
     }
 
-    static long mergeSort(int[] arr) {
+    private static long mergeSort(int[] arr) {
         Sorting.mergeSort(arr);
         return Sorting.getTime();
     }
@@ -176,35 +176,35 @@ public class Reporting {
 
         /* three rounds of sorting an already sorted array */
         contents = contents + "------ SORTED ------";
-        for (int count = 1; count < 4; count++) {
+        for (int count = 0; count < 3; count++) {
             /* insert sort */
-            arrIS1[count - 1] = insertionSort(arr1);
+            arrIS1[count] = insertionSort(arr1);
             sortIS1 = sortIS1 + Sorting.getTime();
-            arrIS10[count - 1] = insertionSort(arr10);
+            arrIS10[count] = insertionSort(arr10);
             sortIS10 = sortIS10 + Sorting.getTime();
-            arrIS100[count - 1] = insertionSort(arr100);
+            arrIS100[count] = insertionSort(arr100);
             sortIS100 = sortIS100 + Sorting.getTime();
-            arrIS1000[count - 1] = insertionSort(arr1000);
+            arrIS1000[count] = insertionSort(arr1000);
             sortIS1000 = sortIS1000 + Sorting.getTime();
 
             /* quick sort */
-            arrQS1[count - 1] = quickSort(arr1);
+            arrQS1[count] = quickSort(arr1);
             sortQS1 = sortQS1 + Sorting.getTime();
-            arrQS10[count - 1] = quickSort(arr10);
+            arrQS10[count] = quickSort(arr10);
             sortQS10 = sortQS10 + Sorting.getTime();
-            arrQS100[count - 1] = quickSort(arr100);
+            arrQS100[count ] = quickSort(arr100);
             sortQS100 = sortQS100 + Sorting.getTime();
-            arrQS1000[count - 1] = quickSort(arr1000);
+            arrQS1000[count ] = quickSort(arr1000);
             sortQS1000 = sortQS1000 + Sorting.getTime();
 
             /* merge sort */
-            arrMS1[count - 1] = mergeSort(arr1);
+            arrMS1[count ] = mergeSort(arr1);
             sortMS1 = sortMS1 + Sorting.getTime();
-            arrMS10[count - 1] = mergeSort(arr10);
+            arrMS10[count ] = mergeSort(arr10);
             sortMS10 = sortMS10 + Sorting.getTime();
-            arrMS100[count - 1] = mergeSort(arr100);
+            arrMS100[count ] = mergeSort(arr100);
             sortMS100 = sortMS100 + Sorting.getTime();
-            arrMS1000[count - 1] = mergeSort(arr1000);
+            arrMS1000[count ] = mergeSort(arr1000);
             sortMS1000 = sortMS1000 + Sorting.getTime();
         }
         // --- Averages Sorted ---
@@ -224,46 +224,46 @@ public class Reporting {
 
         /* three rounds of sorting a reversed sorted array */
         contents = contents + "\n\n\n\n------ REVERSED ------";
-        for (int count = 1; count < 4; count++) {
+        for (int count = 0; count < 3; count++) {
             /* insert sort */
             reverse(arr1);
-            arrIS1[count - 1] = insertionSort(arr1);
+            arrIS1[count ] = insertionSort(arr1);
             reverse(arr10);
-            arrIS10[count - 1] = insertionSort(arr10);
+            arrIS10[count ] = insertionSort(arr10);
             sortIS10 = sortIS10 + Sorting.getTime();
             reverse(arr100);
-            arrIS100[count - 1] = insertionSort(arr100);
+            arrIS100[count ] = insertionSort(arr100);
             sortIS100 = sortIS100 + Sorting.getTime();
             reverse(arr1000);
-            arrIS1000[count - 1] = insertionSort(arr1000);
+            arrIS1000[count ] = insertionSort(arr1000);
             sortIS1000 = sortIS1000 + Sorting.getTime();
 
             /* quick sort */
             reverse(arr1);
-            arrQS1[count - 1] = quickSort(arr1);
+            arrQS1[count ] = quickSort(arr1);
             sortQS1 = sortQS1 + Sorting.getTime();
             reverse(arr10);
-            arrQS10[count - 1] = quickSort(arr10);
+            arrQS10[count ] = quickSort(arr10);
             sortQS10 = sortQS10 + Sorting.getTime();
             reverse(arr100);
-            arrQS100[count - 1] = quickSort(arr100);
+            arrQS100[count ] = quickSort(arr100);
             sortQS100 = sortQS100 + Sorting.getTime();
             reverse(arr1000);
-            arrQS1000[count - 1] = quickSort(arr1000);
+            arrQS1000[count ] = quickSort(arr1000);
             sortQS1000 = sortQS1000 + Sorting.getTime();
 
             /* merge sort */
             reverse(arr1);
-            arrMS1[count - 1] = mergeSort(arr1);
+            arrMS1[count ] = mergeSort(arr1);
             sortMS1 = sortMS1 + Sorting.getTime();
             reverse(arr10);
-            arrMS10[count - 1] = mergeSort(arr10);
+            arrMS10[count ] = mergeSort(arr10);
             sortMS10 = sortMS10 + Sorting.getTime();
             reverse(arr100);
-            arrMS100[count - 1] = mergeSort(arr100);
+            arrMS100[count ] = mergeSort(arr100);
             sortMS100 = sortMS100 + Sorting.getTime();
             reverse(arr1000);
-            arrMS1000[count - 1] = mergeSort(arr1000);
+            arrMS1000[count ] = mergeSort(arr1000);
             sortMS1000 = sortMS1000 + Sorting.getTime();
         }
         // --- Averages Reversed ---
@@ -283,66 +283,47 @@ public class Reporting {
 
         /* three rounds of sorting a randomly sorted array */
         contents = contents + "\n\n\n\n------ RANDOM ------";
-        for (int count = 1; count < 4; count++) {
+        for (int count = 0; count < 3; count++) {
             /* insert sort */
             shuffle(arr1);
-            arrIS1[count - 1] = insertionSort(arr1);
+            arrIS1[count ] = insertionSort(arr1);
             sortIS1 = sortIS1 + Sorting.getTime();
             shuffle(arr10);
-
-            arrIS10[count - 1] = insertionSort(arr10);
+            arrIS10[count ] = insertionSort(arr10);
             sortIS10 = sortIS10 + Sorting.getTime();
             shuffle(arr100);
-
-            Sorting.insertionSort(arr100);
-            arrIS100[count - 1] = insertionSort(arr100);
+            arrIS100[count ] = insertionSort(arr100);
             sortIS100 = sortIS100 + Sorting.getTime();
             shuffle(arr1000);
-
-            Sorting.insertionSort(arr1000);
-            arrIS1000[count - 1] = insertionSort(arr1000);
+            arrIS1000[count ] = insertionSort(arr1000);
             sortIS1000 = sortIS1000 + Sorting.getTime();
 
             /* quick sort */
             shuffle(arr1);
-            Sorting.quickSort(arr1);
-            arrQS1[count - 1] = Sorting.getTime();
+            arrQS1[count ] = quickSort(arr1);
             sortQS1 = sortQS1 + Sorting.getTime();
             shuffle(arr10);
-
-            Sorting.quickSort(arr10);
-            arrQS10[count - 1] = Sorting.getTime();
+            arrQS10[count ] = quickSort(arr10);
             sortQS10 = sortQS10 + Sorting.getTime();
             shuffle(arr100);
-
-            Sorting.quickSort(arr100);
-            arrQS100[count - 1] = Sorting.getTime();
+            arrQS100[count ] = quickSort(arr100);
             sortQS100 = sortQS100 + Sorting.getTime();
             shuffle(arr1000);
-
-            Sorting.quickSort(arr1000);
-            arrQS1000[count - 1] = Sorting.getTime();
+            arrQS1000[count ] = quickSort(arr1000);
             sortQS1000 = sortQS1000 + Sorting.getTime();
 
             /* merge sort */
             shuffle(arr1);
-            Sorting.mergeSort(arr1);
-            arrMS1[count - 1] = Sorting.getTime();
+            arrMS1[count ] = mergeSort(arr1);
             sortMS1 = sortMS1 + Sorting.getTime();
             shuffle(arr10);
-
-            Sorting.mergeSort(arr10);
-            arrMS10[count - 1] = Sorting.getTime();
+            arrMS10[count ] = mergeSort(arr10);
             sortMS10 = sortMS10 + Sorting.getTime();
             shuffle(arr100);
-
-            Sorting.mergeSort(arr100);
-            arrMS100[count - 1] = Sorting.getTime();
+            arrMS100[count ] = mergeSort(arr100);
             sortMS100 = sortMS100 + Sorting.getTime();
             shuffle(arr1000);
-
-            Sorting.mergeSort(arr1000);
-            arrMS1000[count - 1] = Sorting.getTime();
+            arrMS1000[count ] = mergeSort(arr1000);
             sortMS1000 = sortMS1000 + Sorting.getTime();
         }
         //  --- Averages Random ---

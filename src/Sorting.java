@@ -10,15 +10,28 @@ class Sorting {
     private static long time = System.currentTimeMillis();
 
     // CONSTRUCTOR
-    public Sorting() {
-    }
+    public Sorting() {}
 
     // WORKING METHODS
 
+    /**
+     * Sorts an array using bubble sort
+     *
+     * @param arr the array being sorted
+     */
     public static void bubbleSort(int[] arr) {
+        long zero = startTime();
+        // [insert alg here]
+        stopTime(zero);
     }
 
+    /**
+     * Sorts an array using insertion sort
+     *
+     * @param arr the array being sorted
+     */
     public static void insertionSort(int[] arr) {
+        long zero = startTime();
         int i, j;   // Loop control variables
         int entry;  // The element that is currently being inserted
 
@@ -28,6 +41,7 @@ class Sorting {
                 arr[j] = arr[j - 1];
             arr[j] = entry;
         }
+        stopTime(zero);
     }
 
     /**
