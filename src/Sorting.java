@@ -10,7 +10,8 @@ class Sorting {
     private static long time = System.currentTimeMillis();
 
     // CONSTRUCTOR
-    public Sorting() {}
+    public Sorting() {
+    }
 
     // WORKING METHODS
 
@@ -19,9 +20,15 @@ class Sorting {
      *
      * @param arr the array being sorted
      */
-    public static void bubbleSort(int[] arr) {
+    static void bubbleSort(int[] arr) {
         long zero = startTime();
-        // [insert alg here]
+        for (int i = 0; i < arr.length - 1; i++)
+            for (int j = 0; j < arr.length - i - 1; j++)
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j]; //simple swap
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
         stopTime(zero);
     }
 
@@ -30,7 +37,7 @@ class Sorting {
      *
      * @param arr the array being sorted
      */
-    public static void insertionSort(int[] arr) {
+    static void insertionSort(int[] arr) {
         long zero = startTime();
         int i, j;   // Loop control variables
         int entry;  // The element that is currently being inserted
@@ -49,7 +56,7 @@ class Sorting {
      *
      * @param arr the array being sorted
      */
-    public static void quickSort(int[] arr) {
+    static void quickSort(int[] arr) {
         long zero = startTime();
         quickSort(arr, 0, arr.length);
         stopTime(zero);
@@ -60,7 +67,7 @@ class Sorting {
      *
      * @param arr the array to be sorted
      */
-    public static void mergeSort(int[] arr) {
+    static void mergeSort(int[] arr) {
         long zero = startTime();
         int[] fromHere = arr;
         int[] toGoTo = new int[arr.length];
@@ -143,46 +150,6 @@ class Sorting {
         /* the start of the right branch should not include the pivot */
         left++;
         if (end - left > 0) quickSort(arr, left, end);
-    }
-
-    /**
-     * Checks to see if the array is already in order
-     *
-     * @param arr the array  in question
-     * @return boolean on the algorithms decision
-     */
-    private static boolean inOrder(int[] arr) {
-        /* if ordered form least to greatest */
-        if (arr[0] < arr[1]) {
-            for (int index = 0; index < arr.length - 1; index++) {
-                if (arr[index] > arr[index + 1]) {
-                    return false;
-                }
-            }
-            return true;
-        /* if ordered but in reverse */
-        } else {
-            for (int index = 0; index < arr.length - 1; index++) {
-                if (arr[index] > arr[index + 1]) {
-                    return false;
-                }
-            }
-            reverse(arr);
-            return true;
-        }
-    }
-
-    /**
-     * Reverses the inputted array
-     *
-     * @param arr the array in question
-     */
-    private static void reverse(int[] arr) {
-        for (int index = 0; index < (arr.length / 2); index = index + 1) {
-            int save = arr[index];
-            arr[index] = arr[arr.length - 1 - index];
-            arr[arr.length - 1 - index] = save;
-        }
     }
 
     /**

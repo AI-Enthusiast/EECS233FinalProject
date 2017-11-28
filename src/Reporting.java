@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.Random;
 
 /**
@@ -97,10 +98,10 @@ public class Reporting {
      * @param arrayOfSamples the array containing run times
      * @return the average value run time
      */
-    private static double meanVal(long[] arrayOfSamples) {
-        double avgTime = 0;
+    private static int meanVal(long[] arrayOfSamples) {
+        int avgTime = 0;
         /* a loop to sum the run times contained in the input array */
-        for (int i = 0; i < arrayOfSamples.length; i++){
+        for (int i = 0; i < arrayOfSamples.length; i++) {
             avgTime += avgTime;
         }
         return avgTime / arrayOfSamples.length;
@@ -111,7 +112,7 @@ public class Reporting {
         return Sorting.getTime();
     }
 
-    private static long bubbleSort(int[] arr){
+    private static long bubbleSort(int[] arr) {
         Sorting.bubbleSort(arr);
         return Sorting.getTime();
     }
@@ -134,212 +135,204 @@ public class Reporting {
      * @param args meaningless input
      */
     public static void main(String[] args) {
-        String contents = "";
         /* start with all sorted arrays */
         int[] arr1 = generateArray(true, false, 1000);
         int[] arr10 = generateArray(true, false, 10000);
         int[] arr100 = generateArray(true, false, 100000);
         int[] arr1000 = generateArray(true, false, 1000000);
 
-        /* used to compute the average run time */
-        long sortIS1 = 0; //Insertion Sort
-        long sortIS10 = 0;
-        long sortIS100 = 0;
-        long sortIS1000 = 0;
-
-        long sortQS1 = 0; //Quick Sort
-        long sortQS10 = 0;
-        long sortQS100 = 0;
-        long sortQS1000 = 0;
-
-        long sortMS1 = 0;//Merge Sort
-        long sortMS10 = 0;
-        long sortMS100 = 0;
-        long sortMS1000 = 0;
-
         /* arrays to be used for run times */
-        long[] arrIS1 = new long[3];
+        long[] arrIS1 = new long[3]; //Insertion sort
         long[] arrIS10 = new long[3];
         long[] arrIS100 = new long[3];
         long[] arrIS1000 = new long[3];
-
-        long[] arrQS1 = new long[3];
+        long[] arrBS1 = new long[3]; //Bubble sort
+        long[] arrBS10 = new long[3];
+        long[] arrBS100 = new long[3];
+        long[] arrBS1000 = new long[3];
+        long[] arrQS1 = new long[3]; //Quick sort
         long[] arrQS10 = new long[3];
         long[] arrQS100 = new long[3];
         long[] arrQS1000 = new long[3];
-
-        long[] arrMS1 = new long[3];
+        long[] arrMS1 = new long[3]; //Merge sort
         long[] arrMS10 = new long[3];
         long[] arrMS100 = new long[3];
         long[] arrMS1000 = new long[3];
 
+        /* y coordinates that will be used on the graph */
+        int[] yCords = {1000, 10000, 100000, 1000000};
 
         /* three rounds of sorting an already sorted array */
-        contents = contents + "------ SORTED ------";
+        // ------ SORTED ------
         for (int count = 0; count < 3; count++) {
             /* insert sort */
             arrIS1[count] = insertionSort(arr1);
-            sortIS1 = sortIS1 + Sorting.getTime();
             arrIS10[count] = insertionSort(arr10);
-            sortIS10 = sortIS10 + Sorting.getTime();
             arrIS100[count] = insertionSort(arr100);
-            sortIS100 = sortIS100 + Sorting.getTime();
             arrIS1000[count] = insertionSort(arr1000);
-            sortIS1000 = sortIS1000 + Sorting.getTime();
-
+            /* bubble sort */
+            arrBS1[count] = insertionSort(arr1);
+            arrBS10[count] = insertionSort(arr10);
+            arrBS100[count] = insertionSort(arr100);
+            arrBS1000[count] = insertionSort(arr1000);
             /* quick sort */
             arrQS1[count] = quickSort(arr1);
-            sortQS1 = sortQS1 + Sorting.getTime();
             arrQS10[count] = quickSort(arr10);
-            sortQS10 = sortQS10 + Sorting.getTime();
-            arrQS100[count ] = quickSort(arr100);
-            sortQS100 = sortQS100 + Sorting.getTime();
-            arrQS1000[count ] = quickSort(arr1000);
-            sortQS1000 = sortQS1000 + Sorting.getTime();
-
+            arrQS100[count] = quickSort(arr100);
+            arrQS1000[count] = quickSort(arr1000);
             /* merge sort */
-            arrMS1[count ] = mergeSort(arr1);
-            sortMS1 = sortMS1 + Sorting.getTime();
-            arrMS10[count ] = mergeSort(arr10);
-            sortMS10 = sortMS10 + Sorting.getTime();
-            arrMS100[count ] = mergeSort(arr100);
-            sortMS100 = sortMS100 + Sorting.getTime();
-            arrMS1000[count ] = mergeSort(arr1000);
-            sortMS1000 = sortMS1000 + Sorting.getTime();
+            arrMS1[count] = mergeSort(arr1);
+            arrMS10[count] = mergeSort(arr10);
+            arrMS100[count] = mergeSort(arr100);
+            arrMS1000[count] = mergeSort(arr1000);
         }
         // --- Averages Sorted ---
-        contents = contents + "\n      HeapSort1 average time(μs):" + sortIS1 / 3;
-        contents = contents + "\n      HeapSort10 average time(μs):" + sortIS10 / 3;
-        contents = contents + "\n      HeapSort100 average time(μs):" + sortIS100 / 3;
-        contents = contents + "\n      HeapSort1000 average time(μs):" + sortIS1000 / 3;
-        contents = contents + "\n      QuickSort1 average time(μs):" + sortQS1 / 3;
-        contents = contents + "\n      QuickSort10 average time(μs):" + sortQS10 / 3;
-        contents = contents + "\n      QuickSort100 average time(μs):" + sortQS100 / 3;
-        contents = contents + "\n      QuickSort1000 average time(μs):" + sortQS1000 / 3;
-        contents = contents + "\n      MergeSort1 average time(μs):" + sortMS1 / 3;
-        contents = contents + "\n      MergeSort10 average time(μs):" + sortMS10 / 3;
-        contents = contents + "\n      MergeSort100 average time(μs):" + sortMS100 / 3;
-        contents = contents + "\n      MergeSort1000 average time(μs):" + sortMS1000 / 3;
-
+        int[] ISmeanSort = {meanVal(arrIS1), meanVal(arrIS10), meanVal(arrIS100), meanVal(arrIS1000)};
+        int[] QSmeanSort = {meanVal(arrQS1), meanVal(arrQS10), meanVal(arrQS100), meanVal(arrQS1000)};
+        int[] MSmeanSort = {meanVal(arrMS1), meanVal(arrMS10), meanVal(arrMS100), meanVal(arrMS1000)};
+        int[] BSmeanSort = {meanVal(arrBS1), meanVal(arrBS10), meanVal(arrBS100), meanVal(arrBS1000)};
 
         /* three rounds of sorting a reversed sorted array */
-        contents = contents + "\n\n\n\n------ REVERSED ------";
+        // ----- REVERSED ------
         for (int count = 0; count < 3; count++) {
             /* insert sort */
             reverse(arr1);
-            arrIS1[count ] = insertionSort(arr1);
+            arrIS1[count] = insertionSort(arr1);
             reverse(arr10);
-            arrIS10[count ] = insertionSort(arr10);
-            sortIS10 = sortIS10 + Sorting.getTime();
+            arrIS10[count] = insertionSort(arr10);
             reverse(arr100);
-            arrIS100[count ] = insertionSort(arr100);
-            sortIS100 = sortIS100 + Sorting.getTime();
+            arrIS100[count] = insertionSort(arr100);
             reverse(arr1000);
-            arrIS1000[count ] = insertionSort(arr1000);
-            sortIS1000 = sortIS1000 + Sorting.getTime();
-
+            arrIS1000[count] = insertionSort(arr1000);
+            /* bubble sort */
+            reverse(arr1);
+            arrBS1[count] = insertionSort(arr1);
+            reverse(arr10);
+            arrBS10[count] = insertionSort(arr10);
+            reverse(arr100);
+            arrBS100[count] = insertionSort(arr100);
+            reverse(arr1000);
+            arrBS1000[count] = insertionSort(arr1000);
             /* quick sort */
             reverse(arr1);
-            arrQS1[count ] = quickSort(arr1);
-            sortQS1 = sortQS1 + Sorting.getTime();
+            arrQS1[count] = quickSort(arr1);
             reverse(arr10);
-            arrQS10[count ] = quickSort(arr10);
-            sortQS10 = sortQS10 + Sorting.getTime();
+            arrQS10[count] = quickSort(arr10);
             reverse(arr100);
-            arrQS100[count ] = quickSort(arr100);
-            sortQS100 = sortQS100 + Sorting.getTime();
+            arrQS100[count] = quickSort(arr100);
             reverse(arr1000);
-            arrQS1000[count ] = quickSort(arr1000);
-            sortQS1000 = sortQS1000 + Sorting.getTime();
-
+            arrQS1000[count] = quickSort(arr1000);
             /* merge sort */
             reverse(arr1);
-            arrMS1[count ] = mergeSort(arr1);
-            sortMS1 = sortMS1 + Sorting.getTime();
+            arrMS1[count] = mergeSort(arr1);
             reverse(arr10);
-            arrMS10[count ] = mergeSort(arr10);
-            sortMS10 = sortMS10 + Sorting.getTime();
+            arrMS10[count] = mergeSort(arr10);
             reverse(arr100);
-            arrMS100[count ] = mergeSort(arr100);
-            sortMS100 = sortMS100 + Sorting.getTime();
+            arrMS100[count] = mergeSort(arr100);
             reverse(arr1000);
-            arrMS1000[count ] = mergeSort(arr1000);
-            sortMS1000 = sortMS1000 + Sorting.getTime();
+            arrMS1000[count] = mergeSort(arr1000);
         }
         // --- Averages Reversed ---
-        contents = contents + "\n      HeapSort1 average time(μs):" + sortIS1 / 3;
-        contents = contents + "\n      HeapSort10 average time(μs):" + sortIS10 / 3;
-        contents = contents + "\n      HeapSort100 average time(μs):" + sortIS100 / 3;
-        contents = contents + "\n      HeapSort1000 average time(μs):" + sortIS1000 / 3;
-        contents = contents + "\n      QuickSort1 average time(μs):" + sortQS1 / 3;
-        contents = contents + "\n      QuickSort10 average time(μs):" + sortQS10 / 3;
-        contents = contents + "\n      QuickSort100 average time(μs):" + sortQS100 / 3;
-        contents = contents + "\n      QuickSort1000 average time(μs):" + sortQS1000 / 3;
-        contents = contents + "\n      MergeSort1 average time(μs):" + sortMS1 / 3;
-        contents = contents + "\n      MergeSort10 average time(μs):" + sortMS10 / 3;
-        contents = contents + "\n      MergeSort100 average time(μs):" + sortMS100 / 3;
-        contents = contents + "\n      MergeSort1000 average time(μs):" + sortMS1000 / 3;
+        int[] ISmeanRev = {meanVal(arrIS1), meanVal(arrIS10), meanVal(arrIS100), meanVal(arrIS1000)};
+        int[] QSmeanRev = {meanVal(arrQS1), meanVal(arrQS10), meanVal(arrQS100), meanVal(arrQS1000)};
+        int[] MSmeanRev = {meanVal(arrMS1), meanVal(arrMS10), meanVal(arrMS100), meanVal(arrMS1000)};
+        int[] BSmeanRev = {meanVal(arrBS1), meanVal(arrBS10), meanVal(arrBS100), meanVal(arrBS1000)};
 
 
         /* three rounds of sorting a randomly sorted array */
-        contents = contents + "\n\n\n\n------ RANDOM ------";
+        // ------ RANDOM ------
         for (int count = 0; count < 3; count++) {
             /* insert sort */
             shuffle(arr1);
-            arrIS1[count ] = insertionSort(arr1);
-            sortIS1 = sortIS1 + Sorting.getTime();
+            arrIS1[count] = insertionSort(arr1);
             shuffle(arr10);
-            arrIS10[count ] = insertionSort(arr10);
-            sortIS10 = sortIS10 + Sorting.getTime();
+            arrIS10[count] = insertionSort(arr10);
             shuffle(arr100);
-            arrIS100[count ] = insertionSort(arr100);
-            sortIS100 = sortIS100 + Sorting.getTime();
+            arrIS100[count] = insertionSort(arr100);
             shuffle(arr1000);
-            arrIS1000[count ] = insertionSort(arr1000);
-            sortIS1000 = sortIS1000 + Sorting.getTime();
-
+            arrIS1000[count] = insertionSort(arr1000);
+            /* bubble sort */
+            shuffle(arr1);
+            arrBS1[count] = insertionSort(arr1);
+            shuffle(arr10);
+            arrBS10[count] = insertionSort(arr10);
+            shuffle(arr100);
+            arrBS100[count] = insertionSort(arr100);
+            shuffle(arr1000);
+            arrBS1000[count] = insertionSort(arr1000);
             /* quick sort */
             shuffle(arr1);
-            arrQS1[count ] = quickSort(arr1);
-            sortQS1 = sortQS1 + Sorting.getTime();
+            arrQS1[count] = quickSort(arr1);
             shuffle(arr10);
-            arrQS10[count ] = quickSort(arr10);
-            sortQS10 = sortQS10 + Sorting.getTime();
+            arrQS10[count] = quickSort(arr10);
             shuffle(arr100);
-            arrQS100[count ] = quickSort(arr100);
-            sortQS100 = sortQS100 + Sorting.getTime();
+            arrQS100[count] = quickSort(arr100);
             shuffle(arr1000);
-            arrQS1000[count ] = quickSort(arr1000);
-            sortQS1000 = sortQS1000 + Sorting.getTime();
-
+            arrQS1000[count] = quickSort(arr1000);
             /* merge sort */
             shuffle(arr1);
-            arrMS1[count ] = mergeSort(arr1);
-            sortMS1 = sortMS1 + Sorting.getTime();
+            arrMS1[count] = mergeSort(arr1);
             shuffle(arr10);
-            arrMS10[count ] = mergeSort(arr10);
-            sortMS10 = sortMS10 + Sorting.getTime();
+            arrMS10[count] = mergeSort(arr10);
             shuffle(arr100);
-            arrMS100[count ] = mergeSort(arr100);
-            sortMS100 = sortMS100 + Sorting.getTime();
+            arrMS100[count] = mergeSort(arr100);
             shuffle(arr1000);
-            arrMS1000[count ] = mergeSort(arr1000);
-            sortMS1000 = sortMS1000 + Sorting.getTime();
+            arrMS1000[count] = mergeSort(arr1000);
         }
         //  --- Averages Random ---
-        contents = contents + "\n      HeapSort1 average time(μs):" + sortIS1 / 3;
-        contents = contents + "\n      HeapSort10 average time(μs):" + sortIS10 / 3;
-        contents = contents + "\n      HeapSort100 average time(μs):" + sortIS100 / 3;
-        contents = contents + "\n      HeapSort1000 average time(μs):" + sortIS1000 / 3;
-        contents = contents + "\n      QuickSort1 average time(μs):" + sortQS1 / 3;
-        contents = contents + "\n      QuickSort10 average time(μs):" + sortQS10 / 3;
-        contents = contents + "\n      QuickSort100 average time(μs):" + sortQS100 / 3;
-        contents = contents + "\n      QuickSort1000 average time(μs):" + sortQS1000 / 3;
-        contents = contents + "\n      MergeSort1 average time(μs):" + sortMS1 / 3;
-        contents = contents + "\n      MergeSort10 average time(μs):" + sortMS10 / 3;
-        contents = contents + "\n      MergeSort100 average time(μs):" + sortMS100 / 3;
-        contents = contents + "\n      MergeSort1000 average time(μs):" + sortMS1000 / 3;
+        int[] ISmeanRand = {meanVal(arrIS1), meanVal(arrIS10), meanVal(arrIS100), meanVal(arrIS1000)};
+        int[] QSmeanRand = {meanVal(arrQS1), meanVal(arrQS10), meanVal(arrQS100), meanVal(arrQS1000)};
+        int[] MSmeanRand = {meanVal(arrMS1), meanVal(arrMS10), meanVal(arrMS100), meanVal(arrMS1000)};
+        int[] BSmeanRand = {meanVal(arrBS1), meanVal(arrBS10), meanVal(arrBS100), meanVal(arrBS1000)};
 
+         /* Graphing Time!*/
+         /* sorted */
+        Grapher graphSort = new Grapher();
+        graphSort.graph(ISmeanSort, yCords, Color.BLUE);
+        graphSort.graph(BSmeanSort, yCords, Color.yellow);
+        graphSort.graph(QSmeanSort, yCords, Color.RED);
+        graphSort.graph(MSmeanSort, yCords, Color.GREEN);
+        graphSort.display("Presorted Array");
+        /* reversed */
+        Grapher graphRev = new Grapher();
+        graphRev.graph(ISmeanRev, yCords, Color.BLUE);
+        graphRev.graph(BSmeanRev, yCords, Color.yellow);
+        graphRev.graph(QSmeanRev, yCords, Color.RED);
+        graphRev.graph(MSmeanRev, yCords, Color.GREEN);
+        graphRev.display("Reversed Array");
+        /* random */
+        Grapher graphRand = new Grapher();
+        graphRand.graph(ISmeanRand, yCords, Color.BLUE);
+        graphRand.graph(BSmeanRand, yCords, Color.yellow);
+        graphRand.graph(QSmeanRand, yCords, Color.RED);
+        graphRand.graph(MSmeanRand, yCords, Color.GREEN);
+        graphRand.display("Reversed Array");
+        /* insertion */
+        Grapher is = new Grapher();
+        is.graph(ISmeanSort, yCords, Color.BLUE);
+        is.graph(ISmeanRev, yCords, Color.RED);
+        is.graph(ISmeanRand, yCords, Color.YELLOW);
+        is.display("Insertion Sort");
 
+        /* bubble */
+        Grapher bs = new Grapher();
+        bs.graph(BSmeanSort, yCords, Color.BLUE);
+        bs.graph(BSmeanRev, yCords, Color.RED);
+        bs.graph(BSmeanRand, yCords, Color.yellow);
+        bs.display("Bubble Sort");
+
+        /* quick */
+        Grapher qs = new Grapher();
+        qs.graph(QSmeanSort, yCords, Color.BLUE);
+        qs.graph(QSmeanRev, yCords, Color.RED);
+        qs.graph(QSmeanRand, yCords, Color.yellow);
+        qs.display("Quick Sort");
+
+        /* merge */
+        Grapher ms = new Grapher();
+        ms.graph(MSmeanSort, yCords, Color.BLUE);
+        ms.graph(MSmeanRev, yCords, Color.RED);
+        ms.graph(MSmeanRand, yCords, Color.yellow);
+        ms.display("Merge Sort");
     }
 }

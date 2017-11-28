@@ -1,23 +1,24 @@
-// 2-D graphing program. Written by Ian Waldschmidt for EECS 233.
-// See main method for examples of using "graph" and "display" methods.
-// Notes: (1) "graph" must be called for all data before "display".
-//        (2) import java.awt.* to use the Color class in other programs.
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.font.FontRenderContext;
-import java.awt.font.LineMetrics;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+/**
+ * See main method for examples of using "graph" and "display" methods.
+ * Notes: (1) "graph" must be called for all data before "display".
+ * (2) import java.awt.* to use the Color class in other programs.
+ *
+ * @author1 Ian Waldschmidt
+ * @author2 Cormac Dacker cxd289
+ */
 public class Grapher extends JPanel {
-    final int PAD = 30;
-    JFrame f = new JFrame();
-    private ArrayList<int[]> xdatas = new ArrayList<int[]>();
-    private ArrayList<int[]> ydatas = new ArrayList<int[]>();
-    private ArrayList<Color> colors = new ArrayList<Color>();
+    private JFrame f = new JFrame();
+    private ArrayList<int[]> xdatas = new ArrayList<>();
+    private ArrayList<int[]> ydatas = new ArrayList<>();
+    private ArrayList<Color> colors = new ArrayList<>();
 
     public static void main(String[] args) {
         Grapher grapher = new Grapher(); // Create single Grapher for all lines
@@ -37,10 +38,10 @@ public class Grapher extends JPanel {
         int[] ydata3 = {500, 550, 600, 650, 700};
         grapher.graph(xdata3, ydata3, Color.GREEN);
 
-        grapher.display(); // Display all lines when ready
+        grapher.display(""); // Display all lines when ready
     }
 
-    public void graph(int[] xdata, int[] ydata, Color color) {
+    void graph(int[] xdata, int[] ydata, Color color) {
         if (xdata.length != ydata.length) {
             System.out.println("Input arrays must be the same length");
             return;
@@ -51,10 +52,11 @@ public class Grapher extends JPanel {
         this.colors.add(color);
     }
 
-    public void display() {
+    void display(String title) {
         f.add(this);
         f.setSize(400, 400);
         f.setLocation(200, 200);
+        f.setTitle(title);
         f.setVisible(true);
     }
 
@@ -65,14 +67,13 @@ public class Grapher extends JPanel {
         int w = getWidth();
         int h = getHeight();
         //Draw ordinate
+        int PAD = 30;
         g2.draw(new Line2D.Double(PAD, PAD, PAD, h - PAD));
         //Draw abcissa
         g2.draw(new Line2D.Double(PAD, h - PAD, w - PAD, h - PAD));
         //Draw labels
         Font font = g2.getFont();
         FontRenderContext frc = g2.getFontRenderContext();
-        LineMetrics lm = font.getLineMetrics("0", frc);
-        float sh = lm.getAscent() + lm.getDescent();
         //Write x axis values
         double[] xaxis = new double[5];
         xaxis[0] = 0;
@@ -131,10 +132,10 @@ public class Grapher extends JPanel {
 
     private int getMax(ArrayList<int[]> data) {
         int max = -Integer.MAX_VALUE;
-        for (int j = 0; j < data.size(); j++) {
-            for (int i = 0; i < data.get(j).length; i++) {
-                if (data.get(j)[i] > max) {
-                    max = data.get(j)[i];
+        for (int[] aData : data) {
+            for (int i = 0; i < aData.length; i++) {
+                if (aData[i] > max) {
+                    max = aData[i];
                 }
             }
         }

@@ -8,12 +8,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @author1 Cormac Dacker cxd289
  * @author2 Nicole Coury nfc16
  */
-public class SortTester {
+class SortTester {
     /**
      * Test to insure Insertion sort works correctly before timing it
      */
     @Test
-    public void testInsertionSort() {
+    void testInsertionSort() {
         /* randomly sorted array */
         int[] arr = Reporting.generateArray(false, false, 10);
         Sorting.insertionSort(arr);
@@ -34,7 +34,7 @@ public class SortTester {
      * Test to insure Bubble sort works correctly before timing it
      */
     @Test
-    public void testBubbleSort() {
+    void testBubbleSort() {
         /* randomly sorted array */
         int[] arr = Reporting.generateArray(false, false, 10);
         Sorting.bubbleSort(arr);
@@ -55,7 +55,7 @@ public class SortTester {
      * Test to insure Merge sort works correctly before timing it
      */
     @Test
-    public void testMergeSort() {
+    void testMergeSort() {
         /* randomly sorted array */
         int[] arr = Reporting.generateArray(false, false, 10);
         Sorting.mergeSort(arr);
@@ -76,7 +76,7 @@ public class SortTester {
      * Test to insure Quick sort works correctly before timing it
      */
     @Test
-    public void testQuickSort() {
+    void testQuickSort() {
         /* randomly sorted array */
         int[] arr = Reporting.generateArray(false, false, 10);
         Sorting.quickSort(arr);
