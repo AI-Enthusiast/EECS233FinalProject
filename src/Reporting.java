@@ -74,37 +74,18 @@ public class Reporting {
     }
 
     /**
-     * Checks to make sure an array is in proper order
-     *
-     * @param arr the array being checked
-     * @return boolean flag on the algorithms desition
-     */
-    public static String checker(int[] arr) {
-        for (int index = 0; index < arr.length - 1; index++) {
-            try {
-                if (arr[index] > arr[index + 1]) {
-                    return "FAIL";
-                }
-            } catch (ArrayIndexOutOfBoundsException e) {
-                return "PASS";
-            }
-        }
-        return "PASS";
-    }
-
-    /**
      * A method to return the average value of a given array of run times
      *
-     * @param arrayOfSamples the array containing run times
+     * @param arr the array containing run times
      * @return the average value run time
      */
-    private static int meanVal(long[] arrayOfSamples) {
+    private static int meanVal(long[] arr) {
         int avgTime = 0;
         /* a loop to sum the run times contained in the input array */
-        for (int i = 0; i < arrayOfSamples.length; i++) {
-            avgTime += avgTime;
+        for (long anArr : arr) {
+            avgTime += anArr;
         }
-        return avgTime / arrayOfSamples.length;
+        return avgTime / arr.length;
     }
 
     private static long insertionSort(int[] arr) {
@@ -136,10 +117,13 @@ public class Reporting {
      */
     public static void main(String[] args) {
         /* start with all sorted arrays */
-        int[] arr1 = generateArray(true, false, 1000);
-        int[] arr10 = generateArray(true, false, 10000);
-        int[] arr100 = generateArray(true, false, 100000);
-        int[] arr1000 = generateArray(true, false, 1000000);
+        int[] arr1 = generateArray(true, false, 100);
+        int[] arr10 = generateArray(true, false, 1000);
+        int[] arr100 = generateArray(true, false, 10000);
+        int[] arr1000 = generateArray(true, false, 100000);
+
+        /* y coordinates that will be used on the graph */
+        int[] xCords = {100, 1000, 10000, 100000};
 
         /* arrays to be used for run times */
         long[] arrIS1 = new long[3]; //Insertion sort
@@ -159,22 +143,20 @@ public class Reporting {
         long[] arrMS100 = new long[3];
         long[] arrMS1000 = new long[3];
 
-        /* y coordinates that will be used on the graph */
-        int[] yCords = {1000, 10000, 100000, 1000000};
-
         /* three rounds of sorting an already sorted array */
         // ------ SORTED ------
         for (int count = 0; count < 3; count++) {
+            System.out.println(((count + 1)*10) + "% Done");
             /* insert sort */
             arrIS1[count] = insertionSort(arr1);
             arrIS10[count] = insertionSort(arr10);
             arrIS100[count] = insertionSort(arr100);
             arrIS1000[count] = insertionSort(arr1000);
             /* bubble sort */
-            arrBS1[count] = insertionSort(arr1);
-            arrBS10[count] = insertionSort(arr10);
-            arrBS100[count] = insertionSort(arr100);
-            arrBS1000[count] = insertionSort(arr1000);
+            arrBS1[count] = bubbleSort(arr1);
+            arrBS10[count] = bubbleSort(arr10);
+            arrBS100[count] = bubbleSort(arr100);
+            arrBS1000[count] = bubbleSort(arr1000);
             /* quick sort */
             arrQS1[count] = quickSort(arr1);
             arrQS10[count] = quickSort(arr10);
@@ -195,6 +177,7 @@ public class Reporting {
         /* three rounds of sorting a reversed sorted array */
         // ----- REVERSED ------
         for (int count = 0; count < 3; count++) {
+            System.out.println(((count + 4)*10) + "% Done");
             /* insert sort */
             reverse(arr1);
             arrIS1[count] = insertionSort(arr1);
@@ -206,13 +189,13 @@ public class Reporting {
             arrIS1000[count] = insertionSort(arr1000);
             /* bubble sort */
             reverse(arr1);
-            arrBS1[count] = insertionSort(arr1);
+            arrBS1[count] = bubbleSort(arr1);
             reverse(arr10);
-            arrBS10[count] = insertionSort(arr10);
+            arrBS10[count] = bubbleSort(arr10);
             reverse(arr100);
-            arrBS100[count] = insertionSort(arr100);
+            arrBS100[count] = bubbleSort(arr100);
             reverse(arr1000);
-            arrBS1000[count] = insertionSort(arr1000);
+            arrBS1000[count] = bubbleSort(arr1000);
             /* quick sort */
             reverse(arr1);
             arrQS1[count] = quickSort(arr1);
@@ -242,6 +225,7 @@ public class Reporting {
         /* three rounds of sorting a randomly sorted array */
         // ------ RANDOM ------
         for (int count = 0; count < 3; count++) {
+            System.out.println(((count + 7)*10) + "% Done");
             /* insert sort */
             shuffle(arr1);
             arrIS1[count] = insertionSort(arr1);
@@ -253,13 +237,13 @@ public class Reporting {
             arrIS1000[count] = insertionSort(arr1000);
             /* bubble sort */
             shuffle(arr1);
-            arrBS1[count] = insertionSort(arr1);
+            arrBS1[count] = bubbleSort(arr1);
             shuffle(arr10);
-            arrBS10[count] = insertionSort(arr10);
+            arrBS10[count] = bubbleSort(arr10);
             shuffle(arr100);
-            arrBS100[count] = insertionSort(arr100);
+            arrBS100[count] = bubbleSort(arr100);
             shuffle(arr1000);
-            arrBS1000[count] = insertionSort(arr1000);
+            arrBS1000[count] = bubbleSort(arr1000);
             /* quick sort */
             shuffle(arr1);
             arrQS1[count] = quickSort(arr1);
@@ -284,52 +268,52 @@ public class Reporting {
         int[] QSmeanRand = {meanVal(arrQS1), meanVal(arrQS10), meanVal(arrQS100), meanVal(arrQS1000)};
         int[] MSmeanRand = {meanVal(arrMS1), meanVal(arrMS10), meanVal(arrMS100), meanVal(arrMS1000)};
         int[] BSmeanRand = {meanVal(arrBS1), meanVal(arrBS10), meanVal(arrBS100), meanVal(arrBS1000)};
-
+        System.out.println("100% Done!");
          /* Graphing Time!*/
          /* sorted */
         Grapher graphSort = new Grapher();
-        graphSort.graph(ISmeanSort, yCords, Color.BLUE);
-        graphSort.graph(BSmeanSort, yCords, Color.yellow);
-        graphSort.graph(QSmeanSort, yCords, Color.RED);
-        graphSort.graph(MSmeanSort, yCords, Color.GREEN);
+        graphSort.graph(ISmeanSort, xCords, Color.BLUE);
+        graphSort.graph(BSmeanSort, xCords, Color.yellow);
+        graphSort.graph(QSmeanSort, xCords, Color.RED);
+        graphSort.graph(MSmeanSort, xCords, Color.GREEN);
         graphSort.display("Presorted Array");
         /* reversed */
         Grapher graphRev = new Grapher();
-        graphRev.graph(ISmeanRev, yCords, Color.BLUE);
-        graphRev.graph(BSmeanRev, yCords, Color.yellow);
-        graphRev.graph(QSmeanRev, yCords, Color.RED);
-        graphRev.graph(MSmeanRev, yCords, Color.GREEN);
+        graphRev.graph(ISmeanRev, xCords, Color.BLUE);
+        graphRev.graph(BSmeanRev, xCords, Color.yellow);
+        graphRev.graph(QSmeanRev, xCords, Color.RED);
+        graphRev.graph(MSmeanRev, xCords, Color.GREEN);
         graphRev.display("Reversed Array");
         /* random */
         Grapher graphRand = new Grapher();
-        graphRand.graph(ISmeanRand, yCords, Color.BLUE);
-        graphRand.graph(BSmeanRand, yCords, Color.yellow);
-        graphRand.graph(QSmeanRand, yCords, Color.RED);
-        graphRand.graph(MSmeanRand, yCords, Color.GREEN);
-        graphRand.display("Reversed Array");
+        graphRand.graph(ISmeanRand, xCords, Color.BLUE);
+        graphRand.graph(BSmeanRand, xCords, Color.yellow);
+        graphRand.graph(QSmeanRand, xCords, Color.RED);
+        graphRand.graph(MSmeanRand, xCords, Color.GREEN);
+        graphRand.display("Random Array");
         /* insertion */
         Grapher is = new Grapher();
-        is.graph(ISmeanSort, yCords, Color.BLUE);
-        is.graph(ISmeanRev, yCords, Color.RED);
-        is.graph(ISmeanRand, yCords, Color.YELLOW);
+        is.graph(ISmeanSort, xCords, Color.BLUE);
+        is.graph(ISmeanRev, xCords, Color.RED);
+        is.graph(ISmeanRand, xCords, Color.YELLOW);
         is.display("Insertion Sort");
         /* bubble */
         Grapher bs = new Grapher();
-        bs.graph(BSmeanSort, yCords, Color.BLUE);
-        bs.graph(BSmeanRev, yCords, Color.RED);
-        bs.graph(BSmeanRand, yCords, Color.yellow);
+        bs.graph(BSmeanSort, xCords, Color.BLUE);
+        bs.graph(BSmeanRev, xCords, Color.RED);
+        bs.graph(BSmeanRand, xCords, Color.yellow);
         bs.display("Bubble Sort");
         /* quick */
         Grapher qs = new Grapher();
-        qs.graph(QSmeanSort, yCords, Color.BLUE);
-        qs.graph(QSmeanRev, yCords, Color.RED);
-        qs.graph(QSmeanRand, yCords, Color.yellow);
+        qs.graph(QSmeanSort, xCords, Color.BLUE);
+        qs.graph(QSmeanRev, xCords, Color.RED);
+        qs.graph(QSmeanRand, xCords, Color.yellow);
         qs.display("Quick Sort");
         /* merge */
         Grapher ms = new Grapher();
-        ms.graph(MSmeanSort, yCords, Color.BLUE);
-        ms.graph(MSmeanRev, yCords, Color.RED);
-        ms.graph(MSmeanRand, yCords, Color.yellow);
+        ms.graph(MSmeanSort, xCords, Color.BLUE);
+        ms.graph(MSmeanRev, xCords, Color.RED);
+        ms.graph(MSmeanRand, xCords, Color.yellow);
         ms.display("Merge Sort");
     }
 }

@@ -41,7 +41,7 @@ public class Grapher extends JPanel {
         grapher.display(""); // Display all lines when ready
     }
 
-    void graph(int[] xdata, int[] ydata, Color color) {
+    void graph(int[] ydata, int[] xdata, Color color) {
         if (xdata.length != ydata.length) {
             System.out.println("Input arrays must be the same length");
             return;
@@ -54,7 +54,7 @@ public class Grapher extends JPanel {
 
     void display(String title) {
         f.add(this);
-        f.setSize(400, 400);
+        f.setSize(800, 800);
         f.setLocation(200, 200);
         f.setTitle(title);
         f.setVisible(true);
@@ -113,7 +113,7 @@ public class Grapher extends JPanel {
             Color color = this.colors.get(j);
             //Draw lines for each data set
             g2.setPaint(color);
-            for (int i = 0; i < xdata.length - 1; i++) {
+            for (int i = 0; i < xdata.length -1; i++) {
                 double x1 = PAD + xScale * xdata[i];
                 double y1 = h - PAD - yScale * ydata[i];
                 double x2 = PAD + xScale * xdata[i + 1];
@@ -133,9 +133,9 @@ public class Grapher extends JPanel {
     private int getMax(ArrayList<int[]> data) {
         int max = -Integer.MAX_VALUE;
         for (int[] aData : data) {
-            for (int i = 0; i < aData.length; i++) {
-                if (aData[i] > max) {
-                    max = aData[i];
+            for (int anAData : aData) {
+                if (anAData > max) {
+                    max = anAData;
                 }
             }
         }

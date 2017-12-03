@@ -158,7 +158,7 @@ class Sorting {
      * @return time
      */
     private static long startTime() {
-        return System.nanoTime() / 1000;
+        return (System.nanoTime() / 1000);
     }
 
     /**
