@@ -158,7 +158,7 @@ class Sorting {
      * @return time
      */
     private static long startTime() {
-        return (System.nanoTime() / 1000);
+        return (System.currentTimeMillis() * 1000);
     }
 
     /**
@@ -167,7 +167,7 @@ class Sorting {
      * @param zero the start time (not actually 0)
      */
     private static void stopTime(long zero) {
-        setTime((System.nanoTime() / 1000) - zero);
+        setTime((System.currentTimeMillis() * 1000) - zero);
     }
 
     // GETTER/SETTERS

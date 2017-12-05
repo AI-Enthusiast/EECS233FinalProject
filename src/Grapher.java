@@ -113,7 +113,7 @@ public class Grapher extends JPanel {
             Color color = this.colors.get(j);
             //Draw lines for each data set
             g2.setPaint(color);
-            for (int i = 0; i < xdata.length -1; i++) {
+            for (int i = 0; i < xdata.length - 1; i++) {
                 double x1 = PAD + xScale * xdata[i];
                 double y1 = h - PAD - yScale * ydata[i];
                 double x2 = PAD + xScale * xdata[i + 1];

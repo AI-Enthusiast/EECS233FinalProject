@@ -82,8 +82,8 @@ public class Reporting {
     private static int meanVal(long[] arr) {
         int avgTime = 0;
         /* a loop to sum the run times contained in the input array */
-        for (long anArr : arr) {
-            avgTime += anArr;
+        for (int i = 0; i < arr.length; i++) {
+            avgTime += arr[i];
         }
         return avgTime / arr.length;
     }
@@ -117,28 +117,33 @@ public class Reporting {
      */
     public static void main(String[] args) {
         /* start with all sorted arrays */
-        int[] arr1 = generateArray(true, false, 100);
-        int[] arr10 = generateArray(true, false, 1000);
-        int[] arr100 = generateArray(true, false, 10000);
+        int[] arr0 = generateArray(true, false, 10000);
+        int[] arr1 = generateArray(true, false, 25000);
+        int[] arr10 = generateArray(true, false, 50000);
+        int[] arr100 = generateArray(true, false, 75000);
         int[] arr1000 = generateArray(true, false, 100000);
 
         /* y coordinates that will be used on the graph */
-        int[] xCords = {100, 1000, 10000, 100000};
+        int[] xCords = {10000, 25000, 50000, 75000, 100000};
 
         /* arrays to be used for run times */
-        long[] arrIS1 = new long[3]; //Insertion sort
+        long[] arrIS0 = new long[3];    //Insertion sort
+        long[] arrIS1 = new long[3];
         long[] arrIS10 = new long[3];
         long[] arrIS100 = new long[3];
         long[] arrIS1000 = new long[3];
-        long[] arrBS1 = new long[3]; //Bubble sort
+        long[] arrBS0 = new long[3];    //Bubble sort
+        long[] arrBS1 = new long[3];
         long[] arrBS10 = new long[3];
         long[] arrBS100 = new long[3];
         long[] arrBS1000 = new long[3];
-        long[] arrQS1 = new long[3]; //Quick sort
+        long[] arrQS0 = new long[3];    //Quick sort
+        long[] arrQS1 = new long[3];
         long[] arrQS10 = new long[3];
         long[] arrQS100 = new long[3];
         long[] arrQS1000 = new long[3];
-        long[] arrMS1 = new long[3]; //Merge sort
+        long[] arrMS0 = new long[3];    //Merge sort
+        long[] arrMS1 = new long[3];
         long[] arrMS10 = new long[3];
         long[] arrMS100 = new long[3];
         long[] arrMS1000 = new long[3];
@@ -146,38 +151,42 @@ public class Reporting {
         /* three rounds of sorting an already sorted array */
         // ------ SORTED ------
         for (int count = 0; count < 3; count++) {
-            System.out.println(((count + 1)*10) + "% Done");
+            System.out.println(((count + 1) * 10) + "% Done");
             /* insert sort */
+            arrIS0[count] = insertionSort(arr0);
             arrIS1[count] = insertionSort(arr1);
             arrIS10[count] = insertionSort(arr10);
             arrIS100[count] = insertionSort(arr100);
             arrIS1000[count] = insertionSort(arr1000);
             /* bubble sort */
+            arrBS0[count] = bubbleSort(arr0);
             arrBS1[count] = bubbleSort(arr1);
             arrBS10[count] = bubbleSort(arr10);
             arrBS100[count] = bubbleSort(arr100);
             arrBS1000[count] = bubbleSort(arr1000);
             /* quick sort */
+            arrQS0[count] = quickSort(arr0);
             arrQS1[count] = quickSort(arr1);
             arrQS10[count] = quickSort(arr10);
             arrQS100[count] = quickSort(arr100);
             arrQS1000[count] = quickSort(arr1000);
             /* merge sort */
+            arrMS0[count] = mergeSort(arr0);
             arrMS1[count] = mergeSort(arr1);
             arrMS10[count] = mergeSort(arr10);
             arrMS100[count] = mergeSort(arr100);
             arrMS1000[count] = mergeSort(arr1000);
         }
         // --- Averages Sorted ---
-        int[] ISmeanSort = {meanVal(arrIS1), meanVal(arrIS10), meanVal(arrIS100), meanVal(arrIS1000)};
-        int[] QSmeanSort = {meanVal(arrQS1), meanVal(arrQS10), meanVal(arrQS100), meanVal(arrQS1000)};
-        int[] MSmeanSort = {meanVal(arrMS1), meanVal(arrMS10), meanVal(arrMS100), meanVal(arrMS1000)};
-        int[] BSmeanSort = {meanVal(arrBS1), meanVal(arrBS10), meanVal(arrBS100), meanVal(arrBS1000)};
+        int[] ISmeanSort = {meanVal(arrIS0), meanVal(arrIS1), meanVal(arrIS10), meanVal(arrIS100), meanVal(arrIS1000)};
+        int[] QSmeanSort = {meanVal(arrQS0), meanVal(arrQS1), meanVal(arrQS10), meanVal(arrQS100), meanVal(arrQS1000)};
+        int[] MSmeanSort = {meanVal(arrMS0), meanVal(arrMS1), meanVal(arrMS10), meanVal(arrMS100), meanVal(arrMS1000)};
+        int[] BSmeanSort = {meanVal(arrBS0), meanVal(arrBS1), meanVal(arrBS10), meanVal(arrBS100), meanVal(arrBS1000)};
 
         /* three rounds of sorting a reversed sorted array */
         // ----- REVERSED ------
         for (int count = 0; count < 3; count++) {
-            System.out.println(((count + 4)*10) + "% Done");
+            System.out.println(((count + 4) * 10) + "% Done");
             /* insert sort */
             reverse(arr1);
             arrIS1[count] = insertionSort(arr1);
@@ -216,16 +225,17 @@ public class Reporting {
             arrMS1000[count] = mergeSort(arr1000);
         }
         // --- Averages Reversed ---
-        int[] ISmeanRev = {meanVal(arrIS1), meanVal(arrIS10), meanVal(arrIS100), meanVal(arrIS1000)};
-        int[] QSmeanRev = {meanVal(arrQS1), meanVal(arrQS10), meanVal(arrQS100), meanVal(arrQS1000)};
-        int[] MSmeanRev = {meanVal(arrMS1), meanVal(arrMS10), meanVal(arrMS100), meanVal(arrMS1000)};
-        int[] BSmeanRev = {meanVal(arrBS1), meanVal(arrBS10), meanVal(arrBS100), meanVal(arrBS1000)};
+        int[] ISmeanRev = {meanVal(arrIS0), meanVal(arrIS1), meanVal(arrIS10), meanVal(arrIS100), meanVal(arrIS1000)};
+        int[] QSmeanRev = {meanVal(arrQS0), meanVal(arrQS1), meanVal(arrQS10), meanVal(arrQS100), meanVal(arrQS1000)};
+        int[] MSmeanRev = {meanVal(arrMS0), meanVal(arrMS1), meanVal(arrMS10), meanVal(arrMS100), meanVal(arrMS1000)};
+        int[] BSmeanRev = {meanVal(arrBS0), meanVal(arrBS1), meanVal(arrBS10), meanVal(arrBS100), meanVal(arrBS1000)};
+
 
 
         /* three rounds of sorting a randomly sorted array */
         // ------ RANDOM ------
         for (int count = 0; count < 3; count++) {
-            System.out.println(((count + 7)*10) + "% Done");
+            System.out.println(((count + 7) * 10) + "% Done");
             /* insert sort */
             shuffle(arr1);
             arrIS1[count] = insertionSort(arr1);
@@ -264,10 +274,10 @@ public class Reporting {
             arrMS1000[count] = mergeSort(arr1000);
         }
         //  --- Averages Random ---
-        int[] ISmeanRand = {meanVal(arrIS1), meanVal(arrIS10), meanVal(arrIS100), meanVal(arrIS1000)};
-        int[] QSmeanRand = {meanVal(arrQS1), meanVal(arrQS10), meanVal(arrQS100), meanVal(arrQS1000)};
-        int[] MSmeanRand = {meanVal(arrMS1), meanVal(arrMS10), meanVal(arrMS100), meanVal(arrMS1000)};
-        int[] BSmeanRand = {meanVal(arrBS1), meanVal(arrBS10), meanVal(arrBS100), meanVal(arrBS1000)};
+        int[] ISmeanRand = {meanVal(arrIS0), meanVal(arrIS1), meanVal(arrIS10), meanVal(arrIS100), meanVal(arrIS1000)};
+        int[] QSmeanRand = {meanVal(arrQS0), meanVal(arrQS1), meanVal(arrQS10), meanVal(arrQS100), meanVal(arrQS1000)};
+        int[] MSmeanRand = {meanVal(arrMS0), meanVal(arrMS1), meanVal(arrMS10), meanVal(arrMS100), meanVal(arrMS1000)};
+        int[] BSmeanRand = {meanVal(arrBS0), meanVal(arrBS1), meanVal(arrBS10), meanVal(arrBS100), meanVal(arrBS1000)};
         System.out.println("100% Done!");
          /* Graphing Time!*/
          /* sorted */

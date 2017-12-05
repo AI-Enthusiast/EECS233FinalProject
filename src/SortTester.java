@@ -99,6 +99,7 @@ class SortTester {
      * @param arr the array being checked
      * @return boolean flag on the algorithms desition
      */
+    private static String checker(int[] arr) {
         for (int index = 0; index < arr.length - 1; index++) {
             try {
                 if (arr[index] > arr[index + 1]) {
