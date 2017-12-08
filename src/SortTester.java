@@ -5,10 +5,29 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Created to ensure the sorting algorithms work correctly
  *
- * @author1 Cormac Dacker cxd289
- * @author2 Nicole Coury nfc16
+ * @author1 Nicole Coury nfc16
+ * @author2 Cormac Dacker cxd289
  */
 class SortTester {
+    /**
+     * Checks to make sure an array is in proper order
+     *
+     * @param arr the array being checked
+     * @return boolean flag on the algorithms desition
+     */
+    private static String checker(int[] arr) {
+        for (int index = 0; index < arr.length - 1; index++) {
+            try {
+                if (arr[index] > arr[index + 1]) {
+                    return "FAIL";
+                }
+            } catch (ArrayIndexOutOfBoundsException e) {
+                return "PASS";
+            }
+        }
+        return "PASS";
+    }
+
     /**
      * Test to insure Insertion sort works correctly before timing it
      */
@@ -92,24 +111,4 @@ class SortTester {
         Sorting.quickSort(arr);
         assertEquals("PASS", checker(arr), "Failed to sort the array correctly");
     }
-
-    /**
-     * Checks to make sure an array is in proper order
-     *
-     * @param arr the array being checked
-     * @return boolean flag on the algorithms desition
-     */
-    private static String checker(int[] arr) {
-        for (int index = 0; index < arr.length - 1; index++) {
-            try {
-                if (arr[index] > arr[index + 1]) {
-                    return "FAIL";
-                }
-            } catch (ArrayIndexOutOfBoundsException e) {
-                return "PASS";
-            }
-        }
-        return "PASS";
-    }
-
 }

@@ -1,11 +1,10 @@
 /**
  * Sorting class to for InsertionSort, BubbleSort, QuickSort, and MergeSort
  *
- * @author1 Cormac Dacker cxd289
- * @author2 Nicole Coury nfc16
+ * @author1 Nicole Coury nfc16
+ * @author2 Cormac Dacker cxd289
  */
 class Sorting {
-
     // FIELDS
     private static long time = System.currentTimeMillis();
 

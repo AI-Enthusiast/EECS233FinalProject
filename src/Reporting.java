@@ -88,21 +88,45 @@ public class Reporting {
         return avgTime / arr.length;
     }
 
+    /**
+     * Calls Insertion sort in sorting.java
+     *
+     * @param arr The array being sorted
+     * @return The runtime to sort the array
+     */
     private static long insertionSort(int[] arr) {
         Sorting.insertionSort(arr);
         return Sorting.getTime();
     }
 
+    /**
+     * Calls bubble sort in sorting.java
+     *
+     * @param arr The array being sorted
+     * @return The runtime to sort the array
+     */
     private static long bubbleSort(int[] arr) {
         Sorting.bubbleSort(arr);
         return Sorting.getTime();
     }
 
+    /**
+     * Calls quick sort in sorting.java
+     *
+     * @param arr The array being sorted
+     * @return The runtime to sort the array
+     */
     private static long quickSort(int[] arr) {
         Sorting.quickSort(arr);
         return Sorting.getTime();
     }
 
+    /**
+     * Calls merge sort in sorting.java
+     *
+     * @param arr The array being sorted
+     * @return The runtime to sort the array
+     */
     private static long mergeSort(int[] arr) {
         Sorting.mergeSort(arr);
         return Sorting.getTime();
