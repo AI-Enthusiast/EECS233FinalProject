@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/Sorting.java" line="168" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="965bb9f3-971f-46f4-af7d-102d26e54820" name="Default" comment="-All changes of mention occur in Reporting.java&#10;-Changed meanVal() back to a for loop&#10;-Changed array sizes form exponential increasing to linearly increasing&#10;-Altered xCords to match&#10;-Added a 5th array and implemented it across the main method&#10;-Changed back to seconds&#10;-Added comments for all methods">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/EECS233FinalProject/Reporting.class" afterPath="$PROJECT_DIR$/out/production/EECS233FinalProject/Reporting.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/EECS233FinalProject/Sorting.class" afterPath="$PROJECT_DIR$/out/production/EECS233FinalProject/Sorting.class" />
+    <list default="true" id="965bb9f3-971f-46f4-af7d-102d26e54820" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reporting.java" afterPath="$PROJECT_DIR$/src/Reporting.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SortTester.java" afterPath="$PROJECT_DIR$/src/SortTester.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sorting.java" afterPath="$PROJECT_DIR$/src/Sorting.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Sorting.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Sorting.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Sorting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="340">
+              <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
               <folding>
                 <element signature="docComment;class#Sorting#0" expanded="false" />
                 <element signature="method#Sorting#0;class#Sorting#0" expanded="false" />
@@ -66,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Reporting.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Reporting.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Reporting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="123" column="4" lean-forward="false" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
+            <state relative-caret-position="80">
+              <caret line="170" column="37" lean-forward="true" selection-start-line="170" selection-start-column="37" selection-end-line="170" selection-end-column="37" />
               <folding>
                 <element signature="docComment;class#Reporting#0" expanded="false" />
                 <element signature="docComment;method#generateArray#0;class#Reporting#0" expanded="false" />
@@ -90,7 +89,6 @@
                 <element signature="docComment;method#mergeSort#0;class#Reporting#0" expanded="false" />
                 <element signature="method#mergeSort#0;class#Reporting#0" expanded="false" />
                 <element signature="docComment;method#main#0;class#Reporting#0" expanded="false" />
-                <element signature="method#main#0;class#Reporting#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -149,11 +147,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="426" />
-    <option name="height" value="740" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1087" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -349,7 +346,9 @@
       <workItem from="1512333275771" duration="4106000" />
       <workItem from="1512426691185" duration="4528000" />
       <workItem from="1512496742851" duration="3305000" />
-      <workItem from="1512741584212" duration="300000" />
+      <workItem from="1512741584212" duration="332000" />
+      <workItem from="1512947218919" duration="13000" />
+      <workItem from="1512947287233" duration="1390000" />
     </task>
     <task id="LOCAL-00001" summary="-All changes of mention occur in Reporting.java&#10;-Changed meanVal() back to a for loop&#10;-Changed array sizes form exponential increasing to linearly increasing&#10;-Altered xCords to match&#10;-Added a 5th array and implemented it across the main method&#10;-Changed back to seconds">
       <created>1512433914374</created>
@@ -358,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512433914375</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="-All changes of mention occur in Reporting.java&#10;-Changed meanVal() back to a for loop&#10;-Changed array sizes form exponential increasing to linearly increasing&#10;-Altered xCords to match&#10;-Added a 5th array and implemented it across the main method&#10;-Changed back to seconds&#10;-Added comments for all methods">
+      <created>1512741892291</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1512741892291</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -376,22 +382,22 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19339000" />
+    <option name="totallyTimeSpent" value="20774000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-7" y="0" width="974" height="1087" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297414" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -401,8 +407,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39807898" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -496,21 +502,185 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Reporting.java</url>
-          <line>81</line>
-          <properties class="Reporting" method="meanVal">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Sorting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Sorting#0" expanded="false" />
+            <element signature="method#Sorting#0;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#bubbleSort#0;class#Sorting#0" expanded="false" />
+            <element signature="method#bubbleSort#0;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#insertionSort#0;class#Sorting#0" expanded="false" />
+            <element signature="method#insertionSort#0;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#quickSort#0;class#Sorting#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#mergeSort#0;class#Sorting#0" expanded="false" />
+            <element signature="method#mergeSort#0;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#merge#0;class#Sorting#0" expanded="false" />
+            <element signature="method#merge#0;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#quickSort#1;class#Sorting#0" expanded="false" />
+            <element signature="method#quickSort#1;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#startTime#0;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#stopTime#0;class#Sorting#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Grapher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="143" column="1" lean-forward="false" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
+          <folding>
+            <element signature="docComment;class#Grapher#0" expanded="false" />
+            <element signature="method#main#0;class#Grapher#0" expanded="false" />
+            <element signature="method#graph#0;class#Grapher#0" expanded="false" />
+            <element signature="method#display#0;class#Grapher#0" expanded="false" />
+            <element signature="method#paintComponent#0;class#Grapher#0" expanded="false" />
+            <element signature="method#getMax#0;class#Grapher#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SortTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="112" column="5" lean-forward="false" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#SortTester#0" expanded="false" />
+            <element signature="docComment;method#checker#0;class#SortTester#0" expanded="false" />
+            <element signature="method#checker#0;class#SortTester#0" expanded="false" />
+            <element signature="docComment;method#testInsertionSort#0;class#SortTester#0" expanded="false" />
+            <element signature="method#testInsertionSort#0;class#SortTester#0" expanded="false" />
+            <element signature="docComment;method#testBubbleSort#0;class#SortTester#0" expanded="false" />
+            <element signature="method#testBubbleSort#0;class#SortTester#0" expanded="false" />
+            <element signature="docComment;method#testMergeSort#0;class#SortTester#0" expanded="false" />
+            <element signature="method#testMergeSort#0;class#SortTester#0" expanded="false" />
+            <element signature="docComment;method#testQuickSort#0;class#SortTester#0" expanded="false" />
+            <element signature="method#testQuickSort#0;class#SortTester#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reporting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="123" column="4" lean-forward="false" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#generateArray#0;class#Reporting#0" expanded="false" />
+            <element signature="method#generateArray#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#shuffle#0;class#Reporting#0" expanded="false" />
+            <element signature="method#shuffle#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#reverse#0;class#Reporting#0" expanded="false" />
+            <element signature="method#reverse#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#meanVal#0;class#Reporting#0" expanded="false" />
+            <element signature="method#meanVal#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#insertionSort#0;class#Reporting#0" expanded="false" />
+            <element signature="method#insertionSort#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#bubbleSort#0;class#Reporting#0" expanded="false" />
+            <element signature="method#bubbleSort#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#quickSort#0;class#Reporting#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#mergeSort#0;class#Reporting#0" expanded="false" />
+            <element signature="method#mergeSort#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#Reporting#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sorting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Sorting#0" expanded="false" />
+            <element signature="method#Sorting#0;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#bubbleSort#0;class#Sorting#0" expanded="false" />
+            <element signature="method#bubbleSort#0;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#insertionSort#0;class#Sorting#0" expanded="false" />
+            <element signature="method#insertionSort#0;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#quickSort#0;class#Sorting#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#mergeSort#0;class#Sorting#0" expanded="false" />
+            <element signature="method#mergeSort#0;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#merge#0;class#Sorting#0" expanded="false" />
+            <element signature="method#merge#0;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#quickSort#1;class#Sorting#0" expanded="false" />
+            <element signature="method#quickSort#1;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#startTime#0;class#Sorting#0" expanded="false" />
+            <element signature="docComment;method#stopTime#0;class#Sorting#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Grapher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="143" column="1" lean-forward="false" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
+          <folding>
+            <element signature="docComment;class#Grapher#0" expanded="false" />
+            <element signature="method#main#0;class#Grapher#0" expanded="false" />
+            <element signature="method#graph#0;class#Grapher#0" expanded="false" />
+            <element signature="method#display#0;class#Grapher#0" expanded="false" />
+            <element signature="method#paintComponent#0;class#Grapher#0" expanded="false" />
+            <element signature="method#getMax#0;class#Grapher#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SortTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="112" column="5" lean-forward="false" selection-start-line="112" selection-start-column="5" selection-end-line="112" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#SortTester#0" expanded="false" />
+            <element signature="docComment;method#checker#0;class#SortTester#0" expanded="false" />
+            <element signature="method#checker#0;class#SortTester#0" expanded="false" />
+            <element signature="docComment;method#testInsertionSort#0;class#SortTester#0" expanded="false" />
+            <element signature="method#testInsertionSort#0;class#SortTester#0" expanded="false" />
+            <element signature="docComment;method#testBubbleSort#0;class#SortTester#0" expanded="false" />
+            <element signature="method#testBubbleSort#0;class#SortTester#0" expanded="false" />
+            <element signature="docComment;method#testMergeSort#0;class#SortTester#0" expanded="false" />
+            <element signature="method#testMergeSort#0;class#SortTester#0" expanded="false" />
+            <element signature="docComment;method#testQuickSort#0;class#SortTester#0" expanded="false" />
+            <element signature="method#testQuickSort#0;class#SortTester#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reporting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="123" column="4" lean-forward="false" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
+          <folding>
+            <element signature="docComment;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#generateArray#0;class#Reporting#0" expanded="false" />
+            <element signature="method#generateArray#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#shuffle#0;class#Reporting#0" expanded="false" />
+            <element signature="method#shuffle#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#reverse#0;class#Reporting#0" expanded="false" />
+            <element signature="method#reverse#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#meanVal#0;class#Reporting#0" expanded="false" />
+            <element signature="method#meanVal#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#insertionSort#0;class#Reporting#0" expanded="false" />
+            <element signature="method#insertionSort#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#bubbleSort#0;class#Reporting#0" expanded="false" />
+            <element signature="method#bubbleSort#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#quickSort#0;class#Reporting#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#mergeSort#0;class#Reporting#0" expanded="false" />
+            <element signature="method#mergeSort#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#Reporting#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Sorting.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -594,7 +764,6 @@
             <element signature="docComment;method#mergeSort#0;class#Reporting#0" expanded="false" />
             <element signature="method#mergeSort#0;class#Reporting#0" expanded="false" />
             <element signature="docComment;method#main#0;class#Reporting#0" expanded="false" />
-            <element signature="method#main#0;class#Reporting#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -662,7 +831,6 @@
             <element signature="docComment;method#mergeSort#0;class#Reporting#0" expanded="false" />
             <element signature="method#mergeSort#0;class#Reporting#0" expanded="false" />
             <element signature="docComment;method#main#0;class#Reporting#0" expanded="false" />
-            <element signature="method#main#0;class#Reporting#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -770,7 +938,6 @@
             <element signature="docComment;method#mergeSort#0;class#Reporting#0" expanded="false" />
             <element signature="method#mergeSort#0;class#Reporting#0" expanded="false" />
             <element signature="docComment;method#main#0;class#Reporting#0" expanded="false" />
-            <element signature="method#main#0;class#Reporting#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -813,7 +980,6 @@
             <element signature="docComment;method#mergeSort#0;class#Reporting#0" expanded="false" />
             <element signature="method#mergeSort#0;class#Reporting#0" expanded="false" />
             <element signature="docComment;method#main#0;class#Reporting#0" expanded="false" />
-            <element signature="method#main#0;class#Reporting#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -855,34 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Reporting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="123" column="4" lean-forward="false" selection-start-line="123" selection-start-column="4" selection-end-line="123" selection-end-column="4" />
-          <folding>
-            <element signature="docComment;class#Reporting#0" expanded="false" />
-            <element signature="docComment;method#generateArray#0;class#Reporting#0" expanded="false" />
-            <element signature="method#generateArray#0;class#Reporting#0" expanded="false" />
-            <element signature="docComment;method#shuffle#0;class#Reporting#0" expanded="false" />
-            <element signature="method#shuffle#0;class#Reporting#0" expanded="false" />
-            <element signature="docComment;method#reverse#0;class#Reporting#0" expanded="false" />
-            <element signature="method#reverse#0;class#Reporting#0" expanded="false" />
-            <element signature="docComment;method#meanVal#0;class#Reporting#0" expanded="false" />
-            <element signature="method#meanVal#0;class#Reporting#0" expanded="false" />
-            <element signature="docComment;method#insertionSort#0;class#Reporting#0" expanded="false" />
-            <element signature="method#insertionSort#0;class#Reporting#0" expanded="false" />
-            <element signature="docComment;method#bubbleSort#0;class#Reporting#0" expanded="false" />
-            <element signature="method#bubbleSort#0;class#Reporting#0" expanded="false" />
-            <element signature="docComment;method#quickSort#0;class#Reporting#0" expanded="false" />
-            <element signature="method#quickSort#0;class#Reporting#0" expanded="false" />
-            <element signature="docComment;method#mergeSort#0;class#Reporting#0" expanded="false" />
-            <element signature="method#mergeSort#0;class#Reporting#0" expanded="false" />
-            <element signature="docComment;method#main#0;class#Reporting#0" expanded="false" />
-            <element signature="method#main#0;class#Reporting#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SortTester.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -905,8 +1043,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Sorting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="340">
+          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
           <folding>
             <element signature="docComment;class#Sorting#0" expanded="false" />
             <element signature="method#Sorting#0;class#Sorting#0" expanded="false" />
@@ -924,6 +1062,33 @@
             <element signature="method#quickSort#1;class#Sorting#0" expanded="false" />
             <element signature="docComment;method#startTime#0;class#Sorting#0" expanded="false" />
             <element signature="docComment;method#stopTime#0;class#Sorting#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Reporting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="170" column="37" lean-forward="true" selection-start-line="170" selection-start-column="37" selection-end-line="170" selection-end-column="37" />
+          <folding>
+            <element signature="docComment;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#generateArray#0;class#Reporting#0" expanded="false" />
+            <element signature="method#generateArray#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#shuffle#0;class#Reporting#0" expanded="false" />
+            <element signature="method#shuffle#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#reverse#0;class#Reporting#0" expanded="false" />
+            <element signature="method#reverse#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#meanVal#0;class#Reporting#0" expanded="false" />
+            <element signature="method#meanVal#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#insertionSort#0;class#Reporting#0" expanded="false" />
+            <element signature="method#insertionSort#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#bubbleSort#0;class#Reporting#0" expanded="false" />
+            <element signature="method#bubbleSort#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#quickSort#0;class#Reporting#0" expanded="false" />
+            <element signature="method#quickSort#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#mergeSort#0;class#Reporting#0" expanded="false" />
+            <element signature="method#mergeSort#0;class#Reporting#0" expanded="false" />
+            <element signature="docComment;method#main#0;class#Reporting#0" expanded="false" />
           </folding>
         </state>
       </provider>
