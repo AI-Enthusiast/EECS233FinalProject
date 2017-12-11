@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Created to ensure the sorting algorithms work correctly
  *
- * @author1 Nicole Coury nfc16
- * @author2 Cormac Dacker cxd289
+ * @author Nicole Coury nfc16
+ * @author Cormac Dacker cxd289
  */
 class SortTester {
     /**

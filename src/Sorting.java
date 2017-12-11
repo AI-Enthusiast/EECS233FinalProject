@@ -1,8 +1,8 @@
 /**
  * Sorting class to for InsertionSort, BubbleSort, QuickSort, and MergeSort
  *
- * @author1 Nicole Coury nfc16
- * @author2 Cormac Dacker cxd289
+ * @author Nicole Coury nfc16
+ * @author Cormac Dacker cxd289
  */
 class Sorting {
     // FIELDS

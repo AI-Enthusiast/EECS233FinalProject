@@ -11,8 +11,8 @@ import java.util.ArrayList;
  * Notes: (1) "graph" must be called for all data before "display".
  * (2) import java.awt.* to use the Color class in other programs.
  *
- * @author1 Ian Waldschmidt
- * @author2 Cormac Dacker cxd289
+ * @author Ian Waldschmidt
+ * @author Cormac Dacker cxd289
  */
 public class Grapher extends JPanel {
     private JFrame f = new JFrame();

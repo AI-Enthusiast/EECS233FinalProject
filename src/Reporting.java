@@ -4,8 +4,8 @@ import java.util.Random;
 /**
  * Reporting generates the information of the sorting algorithms
  *
- * @author1 Cormac Dacker cxd289
- * @author2 Nicole Coury nfc16
+ * @author Cormac Dacker cxd289
+ * @author Nicole Coury nfc16
  */
 public class Reporting {
     /**
@@ -306,48 +306,48 @@ public class Reporting {
          /* Graphing Time!*/
          /* sorted */
         Grapher graphSort = new Grapher();
-        graphSort.graph(ISmeanSort, xCords, Color.BLUE);
-        graphSort.graph(BSmeanSort, xCords, Color.yellow);
-        graphSort.graph(QSmeanSort, xCords, Color.RED);
-        graphSort.graph(MSmeanSort, xCords, Color.GREEN);
+        graphSort.graph(ISmeanSort, xCords, Color.BLUE); //Insertion
+        graphSort.graph(BSmeanSort, xCords, Color.PINK); //Bubble
+        graphSort.graph(QSmeanSort, xCords, Color.ORANGE); //Quick
+        graphSort.graph(MSmeanSort, xCords, Color.GREEN); //Merge
         graphSort.display("Presorted Array");
         /* reversed */
         Grapher graphRev = new Grapher();
         graphRev.graph(ISmeanRev, xCords, Color.BLUE);
-        graphRev.graph(BSmeanRev, xCords, Color.yellow);
-        graphRev.graph(QSmeanRev, xCords, Color.RED);
+        graphRev.graph(BSmeanRev, xCords, Color.PINK);
+        graphRev.graph(QSmeanRev, xCords, Color.ORANGE);
         graphRev.graph(MSmeanRev, xCords, Color.GREEN);
         graphRev.display("Reversed Array");
         /* random */
         Grapher graphRand = new Grapher();
         graphRand.graph(ISmeanRand, xCords, Color.BLUE);
-        graphRand.graph(BSmeanRand, xCords, Color.yellow);
-        graphRand.graph(QSmeanRand, xCords, Color.RED);
+        graphRand.graph(BSmeanRand, xCords, Color.PINK);
+        graphRand.graph(QSmeanRand, xCords, Color.ORANGE);
         graphRand.graph(MSmeanRand, xCords, Color.GREEN);
         graphRand.display("Random Array");
         /* insertion */
         Grapher is = new Grapher();
-        is.graph(ISmeanSort, xCords, Color.BLUE);
-        is.graph(ISmeanRev, xCords, Color.RED);
-        is.graph(ISmeanRand, xCords, Color.YELLOW);
+        is.graph(ISmeanSort, xCords, Color.BLUE); //Sort
+        is.graph(ISmeanRev, xCords, Color.ORANGE); //Reversed
+        is.graph(ISmeanRand, xCords, Color.PINK); //Random
         is.display("Insertion Sort");
         /* bubble */
         Grapher bs = new Grapher();
         bs.graph(BSmeanSort, xCords, Color.BLUE);
-        bs.graph(BSmeanRev, xCords, Color.RED);
-        bs.graph(BSmeanRand, xCords, Color.yellow);
+        bs.graph(BSmeanRev, xCords, Color.ORANGE);
+        bs.graph(BSmeanRand, xCords, Color.PINK);
         bs.display("Bubble Sort");
         /* quick */
         Grapher qs = new Grapher();
         qs.graph(QSmeanSort, xCords, Color.BLUE);
-        qs.graph(QSmeanRev, xCords, Color.RED);
-        qs.graph(QSmeanRand, xCords, Color.yellow);
+        qs.graph(QSmeanRev, xCords, Color.ORANGE);
+        qs.graph(QSmeanRand, xCords, Color.PINK);
         qs.display("Quick Sort");
         /* merge */
         Grapher ms = new Grapher();
         ms.graph(MSmeanSort, xCords, Color.BLUE);
-        ms.graph(MSmeanRev, xCords, Color.RED);
-        ms.graph(MSmeanRand, xCords, Color.yellow);
+        ms.graph(MSmeanRev, xCords, Color.ORANGE);
+        ms.graph(MSmeanRand, xCords, Color.PINK);
         ms.display("Merge Sort");
     }
 }
